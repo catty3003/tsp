@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204081558) do
+ActiveRecord::Schema.define(version: 20150204165635) do
+
+  create_table "anmeldungs", force: :cascade do |t|
+    t.string   "identnummer"
+    t.string   "fz_brief_nr"
+    t.string   "amtliches_kennzeichen1"
+    t.string   "amtliches_kennzeichen2"
+    t.string   "neues_kennzeichen1"
+    t.string   "neues_kennzeichen2"
+    t.boolean  "feinstaubplakette"
+    t.date     "saison_von"
+    t.date     "saison_bis"
+    t.string   "evb_nr"
+    t.text     "kva_notiz"
+    t.text     "tsp_notiz"
+    t.boolean  "versand_art"
+    t.integer  "kunde_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "kundes", force: :cascade do |t|
     t.string   "gruppe"

@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Anmeldungs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Identnummer</th>
+      <th>Fz brief nr</th>
+      <th>Amtliches kennzeichen1</th>
+      <th>Amtliches kennzeichen2</th>
+      <th>Neues kennzeichen1</th>
+      <th>Neues kennzeichen2</th>
+      <th>Feinstaubplakette</th>
+      <th>Saison von</th>
+      <th>Saison bis</th>
+      <th>Evb nr</th>
+      <th>Kva notiz</th>
+      <th>Tsp notiz</th>
+      <th>Versand art</th>
+      <th>Kunde</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @anmeldungs.each do |anmeldung| %>
+      <tr>
+        <td><%= anmeldung.identnummer %></td>
+        <td><%= anmeldung.fz_brief_nr %></td>
+        <td><%= anmeldung.amtliches_kennzeichen1 %></td>
+        <td><%= anmeldung.amtliches_kennzeichen2 %></td>
+        <td><%= anmeldung.neues_kennzeichen1 %></td>
+        <td><%= anmeldung.neues_kennzeichen2 %></td>
+        <td><%= anmeldung.feinstaubplakette %></td>
+        <td><%= anmeldung.saison_von %></td>
+        <td><%= anmeldung.saison_bis %></td>
+        <td><%= anmeldung.evb_nr %></td>
+        <td><%= anmeldung.kva_notiz %></td>
+        <td><%= anmeldung.tsp_notiz %></td>
+        <td><%= anmeldung.versand_art %></td>
+        <td><%= anmeldung.kunde_id %></td>
+        <td><%= link_to 'Show', anmeldung %></td>
+        <td><%= link_to 'Edit', edit_anmeldung_path(anmeldung) %></td>
+        <td><%= link_to 'Destroy', anmeldung, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Anmeldung', new_anmeldung_path %>

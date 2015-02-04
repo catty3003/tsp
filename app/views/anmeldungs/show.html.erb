@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Identnummer:</strong>
+  <%= @anmeldung.identnummer %>
+</p>
+
+<p>
+  <strong>Fz brief nr:</strong>
+  <%= @anmeldung.fz_brief_nr %>
+</p>
+
+<p>
+  <strong>Amtliches kennzeichen1:</strong>
+  <%= @anmeldung.amtliches_kennzeichen1 %>
+</p>
+
+<p>
+  <strong>Amtliches kennzeichen2:</strong>
+  <%= @anmeldung.amtliches_kennzeichen2 %>
+</p>
+
+<p>
+  <strong>Neues kennzeichen1:</strong>
+  <%= @anmeldung.neues_kennzeichen1 %>
+</p>
+
+<p>
+  <strong>Neues kennzeichen2:</strong>
+  <%= @anmeldung.neues_kennzeichen2 %>
+</p>
+
+<p>
+  <strong>Feinstaubplakette:</strong>
+  <%= @anmeldung.feinstaubplakette %>
+</p>
+
+<p>
+  <strong>Saison von:</strong>
+  <%= @anmeldung.saison_von %>
+</p>
+
+<p>
+  <strong>Saison bis:</strong>
+  <%= @anmeldung.saison_bis %>
+</p>
+
+<p>
+  <strong>Evb nr:</strong>
+  <%= @anmeldung.evb_nr %>
+</p>
+
+<p>
+  <strong>Kva notiz:</strong>
+  <%= @anmeldung.kva_notiz %>
+</p>
+
+<p>
+  <strong>Tsp notiz:</strong>
+  <%= @anmeldung.tsp_notiz %>
+</p>
+
+<p>
+  <strong>Versand art:</strong>
+  <%= @anmeldung.versand_art %>
+</p>
+
+<p>
+  <strong>Kunde:</strong>
+  <%= @anmeldung.kunde_id %>
+</p>
+
+<%= link_to 'Edit', edit_anmeldung_path(@anmeldung) %> |
+<%= link_to 'Back', anmeldungs_path %>
