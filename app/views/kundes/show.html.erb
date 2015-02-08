@@ -1,64 +1,105 @@
 <p id="notice"><%= notice %></p>
+<div class="bs-docs-section">
+  <div class="row">
+    <div class="col-md-12">
 
-<p>
-  <strong>Gruppe:</strong>
-  <%= @kunde.gruppe %>
-</p>
 
-<p>
-  <strong>Anrede:</strong>
-  <%= @kunde.anrede %>
-</p>
+      <div class="page-header">          
+        <h1>
+          Kunde <%= @kunde.anrede if @kunde.anrede %> <%= @kunde.vorname if @kunde.vorname %> <%= @kunde.nachname if @kunde.nachname %>
+        </h1>
+      </div>
 
-<p>
-  <strong>Nachname:</strong>
-  <%= @kunde.nachname %>
-</p>
+      <div class="col-md-3" id="leftCol">
+        <div class="well">    
+          <%= render 'layouts/sidebar_show' %>
+        </div>
+      </div>     
 
-<p>
-  <strong>Geburtsname:</strong>
-  <%= @kunde.geburtsname %>
-</p>
+      <div class="col-md-9" id="rightCol"> 
+        <div class="well">      
+        <%= link_to 'KFZ Anmeldung', new_anmeldung_path, class: "btn btn-success" %> <br/>
 
-<p>
-  <strong>Vorname:</strong>
-  <%= @kunde.vorname %>
-</p>
+          <div class="panel panel-info">
+            <div class="panel-body"> 
 
-<p>
-  <strong>Geburtsdatum:</strong>
-  <%= @kunde.geburtsdatum %>
-</p>
+              <div class="col-md-6" id="leftCol">
+                <div class="well">  
+                  <p>
+                    <strong>Gruppe:</strong>
+                    <%= @kunde.gruppe %>
+                  </p>
 
-<p>
-  <strong>Geburtsort:</strong>
-  <%= @kunde.geburtsort %>
-</p>
+                  <p>
+                    <strong>Tsp versicherungskunde:</strong>
+                    <%= @kunde.tsp_versicherungskunde %>
+                  </p>
 
-<p>
-  <strong>Adresse:</strong>
-  <%= @kunde.adresse %>
-</p>
+                  <p>
+                    <strong>Anrede:</strong>
+                    <%= @kunde.anrede %>
+                  </p>
 
-<p>
-  <strong>Plz:</strong>
-  <%= @kunde.plz %>
-</p>
+                  <p>
+                    <strong>Nachname:</strong>
+                    <%= @kunde.nachname %>
+                  </p>
 
-<p>
-  <strong>Stadt:</strong>
-  <%= @kunde.stadt %>
-</p>
+                  <p>
+                    <strong>Geburtsname:</strong>
+                    <%= @kunde.geburtsname %>
+                  </p>
 
-<p>
-  <strong>Telefonnummer:</strong>
-  <%= @kunde.telefonnummer %>
-</p>
+                  <p>
+                    <strong>Vorname:</strong>
+                    <%= @kunde.vorname %>
+                  </p>
+                </div>
+              </div> 
 
-<p>
-  <strong>Tsp versicherungskunde:</strong>
-  <%= @kunde.tsp_versicherungskunde %>
-</p>
+              <div class="col-md-6" id="rightCol">
+                <div class="well">  
+                  <p>
+                    <strong>Geburtsdatum:</strong>
+                    <%= @kunde.geburtsdatum %>
+                  </p>
 
-<%= link_to 'Edit', edit_kunde_path(@kunde) %> |
-<%= link_to 'Back', kundes_path %>
+                  <p>
+                    <strong>Geburtsort:</strong>
+                    <%= @kunde.geburtsort %>
+                  </p>
+
+                  <p>
+                    <strong>Adresse:</strong>
+                    <%= @kunde.adresse %>
+                  </p>
+
+                  <p>
+                    <strong>Plz:</strong>
+                    <%= @kunde.plz %>
+                  </p>
+
+                  <p>
+                    <strong>Stadt:</strong>
+                    <%= @kunde.stadt %>
+                  </p>
+
+                  <p>
+                    <strong>Telefonnummer:</strong>
+                    <%= @kunde.telefonnummer %>
+                  </p>                  
+                </div>
+              </div>              
+            </div>
+          </div>  
+   
+          <%= link_to 'Kundendaten ändern', edit_kunde_path(@kunde), class: "btn btn-warning btn-sm" %> |  | 
+          <%= link_to 'Löschen', @kunde, class: "btn btn-danger btn-sm", method: :delete, data: { confirm: 'Sind Sie sicher?' } %> | 
+          <%= link_to 'Alle Kunden anzeigen', kundes_path , class: "btn btn-info btn-sm" %> 
+                 
+        </div>
+      </div>
+
+    </div>     
+  </div>
+</div>

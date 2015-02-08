@@ -17,7 +17,7 @@
 
       <div class="field">
         <%= f.label :kunde_id %><br>
-        <%= f.select :kunde_id, Kunde.all.collect {|c| [ c.full_name, c.id ] }, { :include_blank => true, :selected => @anmeldung.kunde_id}, class: "form-control" %>
+        <%= f.select :kunde_id, Kunde.all.collect {|c| [ c.full_name, c.id ] }, { :include_blank => true, :selected => @anmeldung.kunde_id, :prompt => "bitte Kunde wählen für den der Antrag erstellt wird"}, class: "form-control" %>
       </div> 
 
       <div class="field">

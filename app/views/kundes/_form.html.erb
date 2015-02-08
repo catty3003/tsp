@@ -14,63 +14,74 @@
 <div class="well">          
   <div class="panel panel-info">
     <div class="panel-body">
-      <div class="field">
-        <%= f.label :gruppe %><br>
-        <%= f.text_field :gruppe %>
+
+      <div class="col-md-6" id="leftCol">
+        <div class="well">    
+          <div class="field">
+            <%= f.label :gruppe %><br>
+            <%= f.radio_button :gruppe, "Firma"  %> <%= f.label :gruppe, "Firma" %>
+            <%= f.radio_button :gruppe, "Privatperson"  %> <%= f.label :gruppe, "Privatperson" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :tsp_versicherungskunde %><br>
+            <%= f.radio_button :tsp_versicherungskunde, :true  %> <%= f.label :tsp_versicherungskunde, "Ja" %>
+            <%= f.radio_button :tsp_versicherungskunde, :false  %> <%= f.label :tsp_versicherungskunde, "Nein" %>
+          </div>
+          <div class="field">
+            <%= f.label :anrede %><br>
+            <%= f.radio_button :anrede, "Frau"  %> <%= f.label :anrede, "Frau" %>
+            <%= f.radio_button :anrede, "Herr"  %> <%= f.label :anrede, "Herr" %>
+          </div>          
+          <div class="field">
+            <%= f.label "Nachname" %><br>
+            <%= f.text_field :nachname %>
+          </div>
+          <div class="field">
+            <%= f.label :geburtsname %><br>
+            <%= f.text_field :geburtsname %>
+          </div>
+          <div class="field">
+            <%= f.label :vorname %><br>
+            <%= f.text_field :vorname %>
+          </div>
+        </div>
       </div>
-      <div class="field">
-        <%= f.label :anrede %><br>
-        <%= f.text_field :anrede %>
-      </div>
-      <div class="field">
-        <%= f.label :nachname %><br>
-        <%= f.text_field :nachname %>
-      </div>
-      <div class="field">
-        <%= f.label :geburtsname %><br>
-        <%= f.text_field :geburtsname %>
-      </div>
-      <div class="field">
-        <%= f.label :vorname %><br>
-        <%= f.text_field :vorname %>
-      </div>
-      <div class="field">
-        <%= f.label :geburtsdatum %><br>
-        <%= f.date_select :geburtsdatum %>
-      </div>
-      <div class="field">
-        <%= f.label :geburtsort %><br>
-        <%= f.text_field :geburtsort %>
-      </div>
-      <div class="field">
-        <%= f.label :adresse %><br>
-        <%= f.text_field :adresse %>
-      </div>
-      <div class="field">
-        <%= f.label :plz %><br>
-        <%= f.text_field :plz %>
-      </div>
-      <div class="field">
-        <%= f.label :stadt %><br>
-        <%= f.text_field :stadt %>
-      </div>
-      <div class="field">
-        <%= f.label :telefonnummer %><br>
-        <%= f.text_field :telefonnummer %>
-      </div>
-      <div class="field">
-        <%= f.label :tsp_versicherungskunde %><br>
-        <%= f.check_box :tsp_versicherungskunde %>
-      </div>
-      <div class="actions">
-        <%= f.submit %>
+
+      <div class="col-md-6" id="rightCol">
+        <div class="well"> 
+          <div class="field">
+            <%= f.label :geburtsdatum %><br>
+            <%= f.date_select :geburtsdatum, :prompt => { :day => 'Tag', :month => 'Monat', :year => 'Jahr' } %>
+          </div>
+          <div class="field">
+            <%= f.label :geburtsort %><br>
+            <%= f.text_field :geburtsort %>
+          </div>
+          <div class="field">
+            <%= f.label :adresse %><br>
+            <%= f.text_field :adresse %>
+          </div>
+          <div class="field">
+            <%= f.label :plz %><br>
+            <%= f.text_field :plz %>
+          </div>
+          <div class="field">
+            <%= f.label :stadt %><br>
+            <%= f.text_field :stadt %>
+          </div>
+          <div class="field">
+            <%= f.label :telefonnummer %><br>
+            <%= f.text_field :telefonnummer %>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
   <div class="actions">
-    <%= f.submit 'Save Result', class: "btn btn-success" %> | | 
-    <%= link_to 'Cancel', kundes_path, class: "btn btn-danger" %>
+    <%= f.submit 'Speichern', class: "btn btn-success" %> | | 
+    <%= link_to 'Löschen', kundes_path, class: "btn btn-danger" %>
   </div>
   <% end %>
 </div>

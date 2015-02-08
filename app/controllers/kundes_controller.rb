@@ -4,7 +4,10 @@ class KundesController < ApplicationController
   # GET /kundes
   # GET /kundes.json
   def index
-    @kundes = Kunde.all
+   # @kundes = Kunde.all
+    @search = Kunde.search(params[:q])
+    @kundes = @search.result
+    @search.build_condition 
   end
 
   # GET /kundes/1
