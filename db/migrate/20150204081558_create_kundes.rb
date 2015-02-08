@@ -4,6 +4,7 @@ class CreateKundes < ActiveRecord::Migration
       t.string :gruppe
       t.string :anrede
       t.string :nachname
+      t.string :geburtsname
       t.string :vorname
       t.date :geburtsdatum
       t.string :geburtsort

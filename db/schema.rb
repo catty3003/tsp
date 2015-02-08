@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150204165635) do
     t.string   "gruppe"
     t.string   "anrede"
     t.string   "nachname"
+    t.string   "geburtsname"
     t.string   "vorname"
     t.date     "geburtsdatum"
     t.string   "geburtsort"
