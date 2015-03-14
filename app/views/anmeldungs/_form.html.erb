@@ -15,64 +15,71 @@
   <div class="panel panel-info">
     <div class="panel-body">
 
-      <div class="field">
+      <div class="form-group">
         <%= f.label :kunde_id %><br>
         <%= f.select :kunde_id, Kunde.all.collect {|c| [ c.full_name, c.id ] }, { :include_blank => true, :selected => @anmeldung.kunde_id, :prompt => "bitte Kunde wählen für den der Antrag erstellt wird"}, class: "form-control" %>
       </div> 
 
-      <div class="field">
-        <%= f.label :identnummer %><br>
-        <%= f.text_field :identnummer %>
-      </div>
-      <div class="field">
-        <%= f.label :fz_brief_nr %><br>
-        <%= f.text_field :fz_brief_nr %>
-      </div>
-      <div class="field">
-        <%= f.label :amtliches_kennzeichen1 %><br>
-        <%= f.text_field :amtliches_kennzeichen1 %>
-      </div>
-      <div class="field">
-        <%= f.label :amtliches_kennzeichen2 %><br>
-        <%= f.text_field :amtliches_kennzeichen2 %>
-      </div>
-      <div class="field">
-        <%= f.label :neues_kennzeichen1 %><br>
-        <%= f.text_field :neues_kennzeichen1 %>
-      </div>
-      <div class="field">
-        <%= f.label :neues_kennzeichen2 %><br>
-        <%= f.text_field :neues_kennzeichen2 %>
-      </div>
-      <div class="field">
-        <%= f.label :feinstaubplakette %><br>
-        <%= f.check_box :feinstaubplakette %>
-      </div>
-      <div class="field">
-        <%= f.label :saison_von %><br>
-        <%= f.date_select :saison_von %>
-      </div>
-      <div class="field">
-        <%= f.label :saison_bis %><br>
-        <%= f.date_select :saison_bis %>
-      </div>
-      <div class="field">
-        <%= f.label :evb_nr %><br>
-        <%= f.text_field :evb_nr %>
-      </div>
-      <div class="field">
-        <%= f.label :kva_notiz %><br>
-        <%= f.text_area :kva_notiz %>
-      </div>
-      <div class="field">
-        <%= f.label :tsp_notiz %><br>
-        <%= f.text_area :tsp_notiz %>
-      </div>
-      <div class="field">
-        <%= f.label :versand_art %><br>
-        <%= f.check_box :versand_art %>
+      <div class="col-md-6" id="leftCol">
+        <div class="well">    
+          <div class="form-group">
+            <%= f.label :identnummer %><br>
+            <%= f.text_field :identnummer %>
+          </div>
+          <div class="form-group">
+            <%= f.label :fz_brief_nr %><br>
+            <%= f.text_field :fz_brief_nr %>
+          </div>
+          <div class="form-group">
+            <%= f.label "amtliches Kennzeichen" %><br>
+            <%= f.text_field :amtliches_kennzeichen1, placeholder: 'Ort', :maxlength => 3, :size => 3 %> - <%= f.text_field :amtliches_kennzeichen2, placeholder: 'Kennung'  %>
+          </div>
+          <div class="form-group">
+            <%= f.label "neues_kennzeichen" %><br>
+            <%= f.text_field :neues_kennzeichen1, placeholder: 'Ort', :maxlength => 3, :size => 3  %> - <%= f.text_field :neues_kennzeichen2, placeholder: 'Kennung'  %>
+          </div>    
+        </div>
       </div>
 
+      <div class="col-md-6" id="leftCol">
+        <div class="well">  
+          <div class="form-group">
+            <%= f.label :feinstaubplakette %><br>
+            <%= f.radio_button :feinstaubplakette, :true  %> <%= f.label :feinstaubplakette, "Ja" %>
+            <%= f.radio_button :feinstaubplakette, :false  %> <%= f.label :feinstaubplakette, "Nein" %>
+          </div>          
+          <div class="form-group">
+            <%= f.label :saison_von %><br>
+            <%= f.date_select :saison_von, {:use_month_names => ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Juni', 'Juli', 'Aug', 'Sep', 'Okt', 'Nov','Dez'], :discard_year => true, :include_blank => true, :default => nil} %>
+          </div>
+          <div class="form-group">
+            <%= f.label :saison_bis %><br>
+            <%= f.date_select :saison_bis, {:use_month_names => ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Juni', 'Juli', 'Aug', 'Sep', 'Okt', 'Nov','Dez'], :discard_year => true, :include_blank => true, :default => nil} %>
+          </div>
+          <div class="form-group">
+            <%= f.label :evb_nr %><br>
+            <%= f.text_field :evb_nr %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="well"> 
+          <div class="form-group">
+            <%= f.label :kva_notiz %><br>
+            <%= f.text_area :kva_notiz, class: "form-control"  %>
+          </div>
+          <div class="form-group">
+            <%= f.label :tsp_notiz %><br>
+            <%= f.text_area :tsp_notiz, class: "form-control"  %>
+          </div>
+          <div class="form-group">
+            <%= f.label :versand_art %><br>
+            <%= f.radio_button :versand_art, :true  %> <%= f.label :versand_art, "Lieferung" %>
+            <%= f.radio_button :versand_art, :false  %> <%= f.label :versand_art, "Abholung" %>
+          </div> 
+        </div>
+      </div>
     </div>
   </div>
   <div class="actions">

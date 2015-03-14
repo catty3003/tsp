@@ -23,9 +23,9 @@
         <tr>
           <td><%= kunde.gruppe %></td>
           <td><%= kunde.anrede %></td>
-          <td><%= kunde.nachname %></td>
+          <td><%= link_to kunde.nachname, kunde_path(kunde) %></td>
           <td><%= kunde.geburtsname %></td>
-          <td><%= kunde.vorname %></td>
+          <td><%= link_to kunde.vorname, kunde_path(kunde) %></td>
           <td><%= kunde.geburtsdatum %></td>
           <td><%= kunde.geburtsort %></td>
           <td><%= kunde.adresse %></td>

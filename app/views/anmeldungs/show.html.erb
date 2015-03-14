@@ -1,74 +1,151 @@
-<p id="notice"><%= notice %></p>
+<div class="bs-docs-section">
+  <div class="row">
+    <div class="col-md-12">
 
-<p>
-  <strong>Identnummer:</strong>
-  <%= @anmeldung.identnummer %>
-</p>
 
-<p>
-  <strong>Fz brief nr:</strong>
-  <%= @anmeldung.fz_brief_nr %>
-</p>
+      <div class="page-header">          
+        <h1>KFZ Anmeldung für <%= @anmeldung.kunde.vorname %> <%= @anmeldung.kunde.nachname %> </h1>
+      </div>
 
-<p>
-  <strong>Amtliches kennzeichen1:</strong>
-  <%= @anmeldung.amtliches_kennzeichen1 %>
-</p>
+      <div class="col-md-3" id="leftCol">
+        <div class="well">    
+          <%= render 'layouts/sidebar_show' %>
+        </div>
+      </div>     
 
-<p>
-  <strong>Amtliches kennzeichen2:</strong>
-  <%= @anmeldung.amtliches_kennzeichen2 %>
-</p>
+      <div class="col-md-9" id="rightCol">          
+        <div class="well">          
+          <div class="panel panel-info">
+            <div class="panel-body">  
 
-<p>
-  <strong>Neues kennzeichen1:</strong>
-  <%= @anmeldung.neues_kennzeichen1 %>
-</p>
+              <div id="box">   
+                <p><strong>
+                  <%= @anmeldung.neues_kennzeichen1 %> - <%= @anmeldung.neues_kennzeichen2 %> 
+                </strong></p>
 
-<p>
-  <strong>Neues kennzeichen2:</strong>
-  <%= @anmeldung.neues_kennzeichen2 %>
-</p>
+                <p><strong>
+                  <%= @anmeldung.amtliches_kennzeichen1 %> - <%= @anmeldung.amtliches_kennzeichen2 %> 
+                </strong></p>  
+                
+                <p><br></p>
 
-<p>
-  <strong>Feinstaubplakette:</strong>
-  <%= @anmeldung.feinstaubplakette %>
-</p>
+                <p><strong>
+                  <%= @anmeldung.kunde.anrede %>
+                </strong></p>  
 
-<p>
-  <strong>Saison von:</strong>
-  <%= @anmeldung.saison_von %>
-</p>
+                <p><strong>
+                  <%= @anmeldung.kunde.nachname %>
+                </strong></p>  
 
-<p>
-  <strong>Saison bis:</strong>
-  <%= @anmeldung.saison_bis %>
-</p>
+                <p><strong>
+                  <%= @anmeldung.kunde.geburtsname %>
+                </strong></p>              
 
-<p>
-  <strong>Evb nr:</strong>
-  <%= @anmeldung.evb_nr %>
-</p>
+                <p><strong>
+                  <%= @anmeldung.kunde.vorname %>
+                </strong></p>
+               
+                <p><strong>
+                  <%= @anmeldung.kunde.geburtsdatum %>
+                </strong></p>
 
-<p>
-  <strong>Kva notiz:</strong>
-  <%= @anmeldung.kva_notiz %>
-</p>
+                <p><strong>
+                  <%= @anmeldung.kunde.geburtsort %>
+                </strong></p>
 
-<p>
-  <strong>Tsp notiz:</strong>
-  <%= @anmeldung.tsp_notiz %>
-</p>
+                <p><strong>
+                  <%= @anmeldung.kunde.plz %> <%= @anmeldung.kunde.stadt %>
+                </strong></p>
 
-<p>
-  <strong>Versand art:</strong>
-  <%= @anmeldung.versand_art %>
-</p>
+                <p><strong>
+                  <%= @anmeldung.kunde.adresse %>
+                </strong></p>
 
-<p>
-  <strong>Kunde:</strong>
-  <%= @anmeldung.kunde_id %>
-</p>
+                <p><strong>
+                  <br>
+                </strong></p>
+
+                <p><strong>
+                  tsp GmbH 
+                </strong></p>
+
+                <p><strong>
+                  Versicherungs- und Zulassungsservice
+                </strong></p>
+
+                <p><strong>
+                  Tel.: 030 398 375 80
+                </strong></p>
+
+                <p><strong>
+                  10551 Berlin
+                </strong></p>
+
+                <p><strong>
+                  Turmstr. 39 
+                </strong></p>
+
+                <p><strong>
+                  <br>
+                </strong></p>
+
+                <p><strong>
+                  <%= @anmeldung.identnummer %>
+                </strong></p>
+
+                <p><strong>
+                  <%= @anmeldung.fz_brief_nr %>
+                </strong></p>
+
+                <p><strong>
+                  <br> 
+                </strong></p>
+
+                <p><strong>
+                  <br> 
+                </strong></p>
+
+
+                <p><strong>
+                  <%= @anmeldung.evb_nr %>
+                </strong></p>
+              </div> 
+              <div id="boxfsp"> 
+                 <p><strong>
+                  <% if @anmeldung.feinstaubplakette == true %>
+                      <p >X</p>                    
+                    <% else %>
+                      <p> </p>
+                    <% end %>
+                </strong></p>
+              </div>
+
+              <div id="boxsv"> 
+                 <p><strong>
+                  <%= @anmeldung.saison_von.to_formatted_s(:short) %>
+                </strong></p>
+              </div>
+
+              <div id="boxsb"> 
+                 <p><strong>
+                  <%= @anmeldung.saison_bis.to_formatted_s(:short) %>
+                </strong></p>
+              </div>
+
+              <%= image_tag ("zulassungsantrag1.png") %>
+            </div>
+          </div>
+        </div>    
+      </div>
+
+
+    </div>     
+  </div>
+</div> 
+
+
+
+
 
 <%= link_to 'Edit', edit_anmeldung_path(@anmeldung) %> |
 <%= link_to 'Back', anmeldungs_path %>

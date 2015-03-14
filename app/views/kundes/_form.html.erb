@@ -1,3 +1,4 @@
+
 <%= form_for(@kunde) do |f| %>
   <% if @kunde.errors.any? %>
     <div id="error_explanation">
@@ -17,31 +18,31 @@
 
       <div class="col-md-6" id="leftCol">
         <div class="well">    
-          <div class="field">
+          <div class="form-group">
             <%= f.label :gruppe %><br>
             <%= f.radio_button :gruppe, "Firma"  %> <%= f.label :gruppe, "Firma" %>
             <%= f.radio_button :gruppe, "Privatperson"  %> <%= f.label :gruppe, "Privatperson" %>
           </div>
 
-          <div class="field">
+          <div class="form-group">
             <%= f.label :tsp_versicherungskunde %><br>
             <%= f.radio_button :tsp_versicherungskunde, :true  %> <%= f.label :tsp_versicherungskunde, "Ja" %>
             <%= f.radio_button :tsp_versicherungskunde, :false  %> <%= f.label :tsp_versicherungskunde, "Nein" %>
           </div>
-          <div class="field">
+          <div class="form-group">
             <%= f.label :anrede %><br>
             <%= f.radio_button :anrede, "Frau"  %> <%= f.label :anrede, "Frau" %>
             <%= f.radio_button :anrede, "Herr"  %> <%= f.label :anrede, "Herr" %>
           </div>          
-          <div class="field">
-            <%= f.label "Nachname" %><br>
+          <div class="form-group">
+            <%= f.label :nachname %><br>
             <%= f.text_field :nachname %>
           </div>
-          <div class="field">
+          <div class="form-group">
             <%= f.label :geburtsname %><br>
             <%= f.text_field :geburtsname %>
           </div>
-          <div class="field">
+          <div class="form-group">
             <%= f.label :vorname %><br>
             <%= f.text_field :vorname %>
           </div>
@@ -50,27 +51,27 @@
 
       <div class="col-md-6" id="rightCol">
         <div class="well"> 
-          <div class="field">
+          <div class="form-group">
             <%= f.label :geburtsdatum %><br>
             <%= f.date_select :geburtsdatum, :prompt => { :day => 'Tag', :month => 'Monat', :year => 'Jahr' } %>
           </div>
-          <div class="field">
+          <div class="form-group">
             <%= f.label :geburtsort %><br>
             <%= f.text_field :geburtsort %>
           </div>
-          <div class="field">
+          <div class="form-group">
             <%= f.label :adresse %><br>
             <%= f.text_field :adresse %>
           </div>
-          <div class="field">
+          <div class="form-group">
             <%= f.label :plz %><br>
             <%= f.text_field :plz %>
           </div>
-          <div class="field">
+          <div class="form-group">
             <%= f.label :stadt %><br>
             <%= f.text_field :stadt %>
           </div>
-          <div class="field">
+          <div class="form-group">
             <%= f.label :telefonnummer %><br>
             <%= f.text_field :telefonnummer %>
           </div>

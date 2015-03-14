@@ -1,3 +1,19 @@
+#box { position: absolute;   
+       height: auto; width: 400px;    
+       left: 360px; top: 188px; } 
+
+#boxfsp { position: absolute;   
+       height: auto; width: 50px;    
+       left: 788px; top: 797px; }    
+
+#boxsv { position: absolute;   
+       height: auto; width: 50px;    
+       left: 690px; top: 190px; }      
+
+#boxsb { position: absolute;   
+       height: auto; width: 50px;    
+       left: 760px; top: 190px; } 
+
 body {
 padding-top: 70px;
 padding-bottom: 50px;
@@ -19,7 +35,7 @@ html {
 }
 
 th {
-  background-color:   #20B2AA;
+  background-color:   #3EABE9;
   font-weight:bold;
   font-size:120%;
 }
