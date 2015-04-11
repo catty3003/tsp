@@ -14,11 +14,9 @@
       </div>     
 
       <div class="col-md-9" id="rightCol">          
-        <div class="well">          
-          <div class="panel panel-info">
-            <div class="panel-body">  
 
-              <div id="box">   
+
+              <div id="anmdg">   
                 <p><strong>
                   <%= @anmeldung.neues_kennzeichen1 %> - <%= @anmeldung.neues_kennzeichen2 %> 
                 </strong></p>
@@ -110,7 +108,7 @@
                   <%= @anmeldung.evb_nr %>
                 </strong></p>
               </div> 
-              <div id="boxfsp"> 
+              <div id="anfsp"> 
                  <p><strong>
                   <% if @anmeldung.feinstaubplakette == true %>
                       <p >X</p>                    
@@ -120,14 +118,12 @@
                 </strong></p>
               </div>
 
-             
+
 
               <%= image_tag ("zulassungsantrag1.png") %> 
-            </div>
-          </div>
-        </div>    
+  
       </div>
-<a href="//pdfcrowd.com/url_to_pdf/">Save to PDF</a>
+      <a href="//pdfcrowd.com/url_to_pdf/">Save to PDF</a>
 
     </div>     
   </div>
