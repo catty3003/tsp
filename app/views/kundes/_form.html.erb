@@ -53,7 +53,7 @@
         <div class="well"> 
           <div class="form-group">
             <%= f.label :geburtsdatum %><br>
-            <%= f.date_select :geburtsdatum, :prompt => { :day => 'Tag', :month => 'Monat', :year => 'Jahr' } %>
+            <%= f.date_select :geburtsdatum, :prompt => { :day => 'Tag', :month => 'Monat', :year => 'Jahr' }, :start_year => Time.now.year - 15, :end_year => Date.today.year - 70, :order => [:day, :month, :year] %>
           </div>
           <div class="form-group">
             <%= f.label :geburtsort %><br>
