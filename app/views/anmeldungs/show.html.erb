@@ -36,7 +36,11 @@
                 </strong></p>  
 
                 <p><strong>
-                  <%= @anmeldung.kunde.geburtsname %>
+                  <% if @anmeldung.kunde.geburtsname == true %>
+                      <p > <% @anmeldung.kunde.geburtsname%> </p>                    
+                    <% else %>
+                      <br> 
+                    <% end %>
                 </strong></p>              
 
                 <p><strong>
