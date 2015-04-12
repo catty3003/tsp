@@ -8,8 +8,8 @@ class CreateAnmeldungs < ActiveRecord::Migration
       t.string :neues_kennzeichen1
       t.string :neues_kennzeichen2
       t.boolean :feinstaubplakette
-      t.date :saison_von
-      t.date :saison_bis
+      t.string :saison_von
+      t.string :saison_bis
       t.string :evb_nr
       t.text :kva_notiz
       t.text :tsp_notiz

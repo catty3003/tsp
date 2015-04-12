@@ -50,11 +50,11 @@
           </div>          
           <div class="form-group">
             <%= f.label :saison_von %><br>
-            <%= f.date_select :saison_von, {:use_month_names => ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Juni', 'Juli', 'Aug', 'Sep', 'Okt', 'Nov','Dez'], :discard_year => true,:discard_day => true, :include_blank => true, :default => nil} %>
+            <%= f.select :saison_von, ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Juni', 'Juli', 'Aug', 'Sep', 'Okt', 'Nov','Dez'], {:include_blank => true} %>
           </div>
           <div class="form-group">
             <%= f.label :saison_bis %><br>
-            <%= f.date_select :saison_bis, {:use_month_names => ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Juni', 'Juli', 'Aug', 'Sep', 'Okt', 'Nov','Dez'], :discard_year => true, :discard_day => true, :include_blank => true, :default => nil} %>
+            <%= f.select :saison_bis, ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Juni', 'Juli', 'Aug', 'Sep', 'Okt', 'Nov','Dez'], {:include_blank => true} %>
           </div>
           <div class="form-group">
             <%= f.label :evb_nr %><br>
