@@ -32,16 +32,16 @@
                 </strong></p>  
 
                 <p><strong>
-                  <%= @anmeldung.kunde.nachname %>
+                  <%= @anmeldung.kunde.nachname %> 
                 </strong></p>  
 
                 <p><strong>
-                  <% if @anmeldung.kunde.geburtsname == true %>
-                      <p > <% @anmeldung.kunde.geburtsname%> </p>                    
-                    <% else %>
-                      <br> 
-                    <% end %>
-                </strong></p>              
+                  <% unless @anmeldung.kunde.geburtsname? %>
+                      <br>    
+                  <% else %>
+                      <%= @anmeldung.kunde.geburtsname %>
+                  <% end %>               
+                </strong></p>          
 
                 <p><strong>
                   <%= @anmeldung.kunde.vorname %>
@@ -115,7 +115,7 @@
               <div id="anfsp"> 
                  <p><strong>
                   <% if @anmeldung.feinstaubplakette == true %>
-                      <p >X</p>                    
+                      <p> X </p>                    
                     <% else %>
                       <p> </p>
                     <% end %>
