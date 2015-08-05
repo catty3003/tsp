@@ -10,10 +10,10 @@
         <th>Geburtsdatum</th>
         <th>Geburtsort</th>
         <th>Adresse</th>
-        <th>Plz</th>
+        <th>PLZ</th>
         <th>Stadt</th>
         <th>Telefonnummer</th>
-        <th>Tsp versicherungskunde</th>
+        <th>tsp-Versicherungskunde</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -33,8 +33,8 @@
           <td><%= kunde.stadt %></td>
           <td><%= kunde.telefonnummer %></td>
           <td><%= kunde.tsp_versicherungskunde %></td>
-          <td><%= link_to 'Show', kunde, class: "btn btn-info btn-sm"  %></td>
-          <td><%= link_to 'Edit', edit_kunde_path(kunde), class: "btn btn-warning btn-sm" %></td>
+          <td><%= link_to 'Anzeigen', kunde, class: "btn btn-info btn-sm"  %></td>
+          <td><%= link_to 'Bearbeiten', edit_kunde_path(kunde), class: "btn btn-warning btn-sm" %></td>
         </tr>
       <% end %>
     </tbody>

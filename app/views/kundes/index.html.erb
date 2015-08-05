@@ -4,9 +4,9 @@
 
 
       <div class="page-header">          
-        <h1>Kunden Liste<br>
+        <h1>Kundenliste<br>
 
-          <small><%= pluralize(@kundes.count, "Kunde") %></small></h1>
+          <small><%= @kundes.count %> Kunde/n</small></h1>
       </div>
 
       <div class="col-md-3" id="leftCol">
@@ -19,7 +19,7 @@
 
 
         <div class="well">
-          Suche mit verschiedene Filteroptionen
+          Suche mit verschiedenen Filteroptionen
           <%= search_form_for @search do |f| %>
           <%= f.condition_fields do |c| %>
             <div class="field">
@@ -32,12 +32,12 @@
               <% end %>
               </div>
             <% end %>
-            <div class="actions"><%= f.submit "Search", class: "btn-sm btn-success"  %> | 
-            <%= link_to 'alle Kunden Anzeigen', kundes_path, class: "btn-sm btn-info" %> </div>
+            <div class="actions"><%= f.submit "Suchen", class: "btn-sm btn-success"  %> 
+            <%= link_to 'Alle Kunden anzeigen', kundes_path, class: "btn-sm btn-info" %> </div>
           <% end %>
         </div>
 
-        <%= link_to 'Neuer Kunde anlegen', new_kunde_path, class: "btn btn-success " %> 
+        <%= link_to 'Neuen Kunden anlegen', new_kunde_path, class: "btn btn-success " %> 
 
         <%= render 'tablekunden' %> <br>
       </div>

@@ -4,7 +4,7 @@
 
 
       <div class="page-header">          
-        <h1>KFZ Anmeldung für <%= @anmeldung.kunde.vorname %> <%= @anmeldung.kunde.nachname %> </h1>
+        <h1>Kfz-Anmeldung für <%= @anmeldung.kunde.vorname %> <%= @anmeldung.kunde.nachname %> </h1>
       </div>
 
       <div class="col-md-3" id="leftCol">
@@ -138,8 +138,8 @@
               <%= image_tag ("zulassungsantrag1.png") %> 
   
       </div>
-      <a href="//pdfcrowd.com/url_to_pdf/">Save to PDF</a>
-      <a href="http://www.web2pdfconvert.com/convert">Save to PDF</a>
+      <a href="//pdfcrowd.com/url_to_pdf/">Als PDF speichern</a>
+      <!-- <a href="http://www.web2pdfconvert.com/convert">Als PDF speichern</a> -->
 
     </div>     
   </div>
@@ -149,5 +149,5 @@
 
 
 
-<%= link_to 'Edit', edit_anmeldung_path(@anmeldung) %> |
-<%= link_to 'Back', anmeldungs_path %>
+<%= link_to 'Bearbeiten', edit_anmeldung_path(@anmeldung) %> |
+<%= link_to 'Zurück', anmeldungs_path %>
